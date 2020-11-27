@@ -41,7 +41,7 @@ abstract class AbstractView implements ViewInterface
                 $this->smarty->assign($key, $value);
         }
 
-        public function displayOutput($base_tpl = 'index.tpl') : void
+        public function displayOutput($base_tpl = 'index.html') : void
         {
                 $this->_prepareOutput();
                 $this->smarty->display($base_tpl);

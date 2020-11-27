@@ -17,7 +17,7 @@ class MainController extends AbstractController
         }
         public function actionDefault()
         {
-                $this->view->setTemplate('modules/main.tpl');
+                $this->view->setTemplate('modules/main.html');
                 $this->view->generateView();
                 
                 return $this->view->displayOutput();
