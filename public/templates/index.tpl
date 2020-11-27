@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+    content="width=device-width,
+    initial-scale=1,
+    shrink-to-fit=no">
+    
+    <title>PHP-Project</title>
+    
+    {if isset($assets.styles)}
+    {foreach item='file' from=$assets.styles name="styles"}
+    <link rel="stylesheet" type="text/css" href="/{$file}" />
+    {/foreach}
+    {/if}
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <header class="row" id="navbar-container-wrapper">
+            <div class="col-12" id="navbar-container">
+                {include 'partials/navbar.tpl'}
+            </div>
+        </header>
+        <aside class="row" id="main-container-wrapper">
+            <div class="col-2 small" id="sidebar-container">
+                {include 'partials/sidebar.tpl'}
+            </div>
+            <div class="col-10" id="content-container">
+                <div class="p-2">
+                    {if isset($module_content)}
+                    {$module_content}
+                    {/if}
+                </div>
+            </div>
+        </aside>
+        <footer class="row" id="footer-container-wrapper">
+            <div class="col-12" id="footer-container">
+                {include 'partials/footer.tpl'}
+            </div>
+        </footer>
+    </div>
+    {if isset($assets.scripts)}
+    {foreach item='file' from=$assets.scripts name="scripts"}
+    <script type="text/javascript" src="/{$file}"></script>
+    {/foreach}
+    {/if}
+</body>
+</html>
