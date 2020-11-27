@@ -1,2 +1,3 @@
 .js linguist-detectable=false
 .php linguist-language=PHP
+Controller/* linguist-vendored
