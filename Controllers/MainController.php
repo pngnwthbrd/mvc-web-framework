@@ -7,19 +7,19 @@ use Views\Factories\ViewFactory;
 
 class MainController extends AbstractController
 {
-        private $model;
-        private $view;
+    private $model;
+    private $view;
+    
+    public function __construct()
+    {
+        $this->model = ModelFactory::create('MainModel');
+        $this->view = ViewFactory::create('MainView');
+    }
+    public function actionDefault()
+    {
+        $this->view->setTemplate('modules/main.html');
+        $this->view->generateView();
         
-        public function __construct()
-        {
-                $this->model = ModelFactory::create('MainModel');
-                $this->view = ViewFactory::create('MainView');
-        }
-        public function actionDefault()
-        {
-                $this->view->setTemplate('modules/main.html');
-                $this->view->generateView();
-                
-                return $this->view->displayOutput();
-        }
+        return $this->view->displayOutput();
+    }
 }

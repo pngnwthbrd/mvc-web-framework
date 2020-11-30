@@ -4,5 +4,5 @@ namespace Core\Interfaces;
 
 interface FactoryInterface
 {
-        public static function create($class);
+    public static function create($class);
 }

@@ -35,7 +35,7 @@ require '../includes/routes.php';
 
 function test(Types\Interfaces\TypeInterface $arg)
 {
-        //var_dump($arg->getProperty('firstname'));
+    //var_dump($arg->getProperty('firstname'));
 }
 
 $user_t = TypeFactory::create("UserType");

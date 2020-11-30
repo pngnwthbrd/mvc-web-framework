@@ -6,5 +6,5 @@ use Core\Interfaces\FactoryInterface;
 
 abstract class AbstractFactory implements FactoryInterface
 {
-        abstract public static function create($class);
+    abstract public static function create($class);
 }
