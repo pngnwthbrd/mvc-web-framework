@@ -61,10 +61,9 @@ class Router implements RouterInterface
             $delim = "/";
 
             if (array_key_exists($route, $this->routes))
-            return $this->routes[$route];
+                return $this->routes[$route];
 
-        foreach ($this->routes as $name => &$current)
-        {
+        foreach ($this->routes as $name => &$current) {
             $route_array = explode($delim, trim($route, $delim));
             $name_array = explode($delim, trim($name, $delim));
             $array_size = count($route_array);
@@ -76,7 +75,7 @@ class Router implements RouterInterface
                         $key = ($i == 0) ? "" : $key;
                         $key .= $route_array[$i] . $delim;
                         continue;
-                    } else if (count($match) > 0) {
+                    } else if (count($match) > 0 && strpos($name, $key) !== false) {
                         $current['params'][$match[1]] = $route_array[$i];
                         $key .= $match[0] . $delim;
                         $yep = true;
